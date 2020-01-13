@@ -1,0 +1,41 @@
+﻿@model PersonModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Dodawanie nowego numeru</h2>
+
+<form asp-action="Add" asp-controller="Person" method="post">
+
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control is-valid" required />
+            <span asp-validation-for="FirstName" class="valid-feedback"></span>
+            
+        </div>
+        <div class="col-md-4 mb-3">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control is-valid" required />
+            <span asp-validation-for="LastName" class="valid-feedback"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control is-valid" required/>
+            <span asp-validation-for="Phone" class="valid-feedback"></span>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label asp-for="Email" ></label>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend3">@@</span>
+                <input asp-for="Email" class="form-control is-valid" required />
+            </div>
+            <span asp-validation-for="Email" class="valid-feedback"></span>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" formaction="">Wyślij</button>
+</form>
+

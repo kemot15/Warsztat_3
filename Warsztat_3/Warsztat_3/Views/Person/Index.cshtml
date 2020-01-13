@@ -1,0 +1,38 @@
+﻿@model List<PersonModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead class="thead=dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Imię</th>
+            <th scope="col">Nazwisko</th>
+            <th scope="col">Nr telefonu</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Utworzono</th>
+            <th scope="col">Zmodyfikowano</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personModel in Model)
+        {
+            <tr>
+                <td scope="row">@personModel.ID</td>
+                <td>@personModel.FirstName</td>
+                <td>@personModel.LastName</td>
+                <td>@personModel.Phone</td>
+                <td>@personModel.Email</td>
+                <td>@personModel.Created</td>
+                <td>@personModel.Updated</td>
+                <td>@Html.ActionLink("Wyświetl", "Show", "Person", new { personModel.ID })</td>
+            </tr>
+        }
+        </tbody>
+
+</table>
+    

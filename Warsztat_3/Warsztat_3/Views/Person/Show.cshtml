@@ -1,0 +1,45 @@
+﻿@model PersonModel
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h2>Show</h2>
+
+@using (Html.BeginForm("Show", "Person", FormMethod.Post))
+{
+<fieldset disabled>
+    <div class="form-inline">
+        <div class="form-group">
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Phone)
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-inline">
+        
+        <div class="form-group">
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Created)
+            @Html.TextBoxFor(x => x.Created, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Updated)
+            @Html.TextBoxFor(x => x.Updated, new { @class = "form-control" })
+        </div>
+    </div>
+    @Html.ActionLink("Edytuj", "Edit", "Person", new { Model.ID })
+    <br />
+    @Html.ActionLink("Usuń", "Remove", "Person", new { Model.ID })
+</fieldset>
+    }
+
